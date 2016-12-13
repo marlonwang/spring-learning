@@ -10,8 +10,8 @@ public class User {
 	public User(){
 		Random random = new Random();
 		this.id = random.nextLong();
-		this.age = random.nextInt();
-		this.name = String.valueOf(random.nextInt(100));
+		this.age = random.nextInt(30);
+		this.name = String.valueOf("user_"+random.nextInt(100));
 	}
 	public long getId() {
 		return id;

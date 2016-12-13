@@ -23,6 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
         <springframework.version>4.1.0.RELEASE</springframework.version>
+        <jetty.version>9.2.17.v20160517</jetty.version>
 	</properties>
 
 	<dependencies>
@@ -41,8 +42,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- exclude tomcat, user jetty -->
+			<exclusions>
+		      <exclusion>
+		         <groupId>org.springframework.boot</groupId>
+		         <artifactId>spring-boot-starter-tomcat</artifactId>
+		      </exclusion>
+		   </exclusions>
 		</dependency>
 		
+		<!-- if jetty as emmbed container, add bellow -->
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency>
+
 		<!-- swagger2 -->
 		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
 		<dependency>
@@ -58,10 +72,14 @@
 		    <version>2.4.0</version>
 		</dependency>
 
-		
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
