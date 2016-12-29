@@ -20,6 +20,7 @@ public class Swagger2 {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
+				.host("127.0.0.1:8080")
                 .apiInfo(apiInfo())  // 可选，设置api文档描述信息
                 .select()            // 选择哪些路径和api会生成document
                 .apis(RequestHandlerSelectors.basePackage("net.logvv.swagger.web"))
