@@ -34,8 +34,8 @@ public class HttpSessionConfig {
         LettuceConnectionFactory factory = new LettuceConnectionFactory();
         factory.setDatabase(3);
         factory.setHostName("www.logvv.net");
-        factory.setPort(28079);
-        factory.setPassword("hspd1101");
+        factory.setPort(6379);
+        factory.setPassword("123456");
         factory.afterPropertiesSet();
 
         return factory;
