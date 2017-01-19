@@ -1,0 +1,1 @@
+static files here, ie:css/js etc.

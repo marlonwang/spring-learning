@@ -1,4 +1,30 @@
 server:
   port: 8080
+
 logging:
-  config:classpath: logback-spring.xml
+  config:classpath: spring-logback.xml
+
+# default thymeleaf config is below
+spring:
+  thymeleaf:
+    prefix: /templates/
+    suffix: .html
+    cache: false
+
+  redis:
+    host: www.logvv.net
+    port: 28079
+    database: 3
+    password: hspd1101
+    pool:
+      max-idle: 10
+      max-wait: 180
+      max-active: 20
+
+  session:
+    store-type: redis
+
+
+
+
+

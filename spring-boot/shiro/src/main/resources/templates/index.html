@@ -1,17 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 </head>
 <body>  
     <div>
-        <img src="http://xcxhn-1251451766.file.myqcloud.com/mall_template/cda7b38cce964ffc9e5d4a21727913a1.png">
-        <img src="http://xcxhn-1251451766.cosgz.myqcloud.com/mall_template/cda7b38cce964ffc9e5d4a21727913a1.png">
+        <img src="http://xcxhn-1251451766.file.myqcloud.com/mall_template/cda7b38cce964ffc9e5d4a21727913a1.png"/>
     </div>
-    <div>Hello ~</div>
+    <div>this is a thymeleaf tutorial</div>
     <div>
         <p th:text="'hello, '+ ${name} + '.' "/>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>ID</th><th>firstname</th><th>lastname</th>
+            </tr>
+            <tr>
+            　　<td th:text="${account.accountId}"></td>
+            　　<td th:text="${account.firstname}"></td>
+            　　<td th:text="${account.lastname}"></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
