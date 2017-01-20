@@ -28,4 +28,9 @@ public class AccountService {
 
         return account;
     }
+
+    public void logout(String token)
+    {
+        cacheService.evictAccount(token);
+    }
 }

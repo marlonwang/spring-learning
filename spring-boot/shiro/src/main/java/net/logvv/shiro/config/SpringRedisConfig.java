@@ -36,10 +36,10 @@ public class SpringRedisConfig {
     public JedisConnectionFactory connectionFactory()
     {
         JedisConnectionFactory connectionFactory = new JedisConnectionFactory();
-        connectionFactory.setHostName("www.logvv.net");
-        connectionFactory.setPort(28079);
+        connectionFactory.setHostName("127.0.0.1");
+        connectionFactory.setPort(6379);
         connectionFactory.setDatabase(2);
-        connectionFactory.setPassword("hspd1101");
+        connectionFactory.setPassword("123456");
 
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxIdle(10);
