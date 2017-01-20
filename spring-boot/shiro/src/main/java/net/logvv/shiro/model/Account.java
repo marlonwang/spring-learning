@@ -11,7 +11,7 @@ public class Account {
     private String lastname;
 
     public Account(String firstname, String lastname){
-        this.accountId = new Random(2).nextInt(100);
+        this.accountId = new Random().nextInt(100);
         this.firstname = firstname;
         this.lastname = lastname;
     }

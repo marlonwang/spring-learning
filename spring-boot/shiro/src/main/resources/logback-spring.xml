@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
-    <property firstname="LOG_HOME" value="${user.dir}/logs" />
+    <property name="LOG_HOME" value="${user.dir}/logs" />
 
-    <appender firstname="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{32} [%L] - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <appender firstname="shiro" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="shiro" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${LOG_HOME}/shiro.log</File>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
@@ -23,7 +23,7 @@
         </rollingPolicy>
     </appender>
 
-    <appender firstname="thirdlib" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="thirdlib" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${LOG_HOME}/thirdlib.log</File>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>DEBUG</level>
@@ -38,11 +38,11 @@
         </rollingPolicy>
     </appender>
 
-<!--    <logger firstname="net.logvv" level="info" addtivity="false">
+    <logger name="net.logvv" level="info" addtivity="false">
         <appender-ref ref="STDOUT"/>
-    </logger>-->
+    </logger>
 
-    <logger firstname="net.logvv" level="info" addtivity="false">
+    <logger name="net.logvv" level="info" addtivity="false">
         <appender-ref ref="shiro"/>
     </logger>
 

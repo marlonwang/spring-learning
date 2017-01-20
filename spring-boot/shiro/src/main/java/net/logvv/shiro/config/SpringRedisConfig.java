@@ -85,7 +85,7 @@ public class SpringRedisConfig {
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
 
         // 设置过期时间
-        cacheManager.setDefaultExpiration(0);
+        cacheManager.setDefaultExpiration(1800);
 
 //        cacheManager.setCachePrefix(new RedisCachePrefix() {
 //            @Override
@@ -97,7 +97,7 @@ public class SpringRedisConfig {
         Map<String,Long> map = new HashMap<String, Long>(){
             {
                 put("default",180L);
-                put("accountCache",180L);
+                put("accountCache",180L);// ??? 哪里定义
             }
         };
         cacheManager.setExpires(map);

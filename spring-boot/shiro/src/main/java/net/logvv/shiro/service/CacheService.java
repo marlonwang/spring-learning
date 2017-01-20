@@ -1,6 +1,7 @@
 package net.logvv.shiro.service;
 
 import net.logvv.shiro.model.Account;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,11 @@ public class CacheService {
     {
         System.out.println("query from db.");
         return new Account(name,password);
+    }
+
+    @CacheEvict(value = "cacheManager", keyGenerator = "cacheKeyGenerator", allEntries = true)
+    public void evictAccount(String cacheKey)
+    {
+
     }
 }
