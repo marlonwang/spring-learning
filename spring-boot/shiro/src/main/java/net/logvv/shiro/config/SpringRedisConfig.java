@@ -22,6 +22,8 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
+ * @EnableCaching作用和<cache:annotation-driven /> 相同,
+ * 必须启用才能保证cache注解生效，取消cache可以直接去掉这两者之一而不用去除所有的cache注解
  * Created by marlon on 2017/1/19.
  */
 @Configuration

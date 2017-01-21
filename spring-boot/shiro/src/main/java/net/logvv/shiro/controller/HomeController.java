@@ -59,4 +59,9 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello()
+    {
+        return "Hello World";
+    }
 }
