@@ -69,4 +69,10 @@ public class ApplicationTests
         jdbcUserDao.queryPassengers();
     }
 
+    @Test
+    public void testUpdatePassenger()
+    {
+        jdbcUserDao.updatePassenger(7,"ÁõÀÏ¸ù",62);
+    }
+
 }
