@@ -1,13 +1,13 @@
 package net.logvv.shiro;
 
 import net.logvv.shiro.controller.HomeController;
+import net.logvv.shiro.dao.JdbcUserDaoImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -22,10 +22,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
+@SpringBootTest
 public class ApplicationTests
 {
     @Autowired
     protected WebApplicationContext wac;
+
+    @Autowired
+    private JdbcUserDaoImpl jdbcUserDao;
 
     private MockMvc mockMvc;
 
@@ -51,6 +55,18 @@ public class ApplicationTests
                 .andExpect(content().string(equalTo("success")));
 	}
 
+    @Test
+    public void testInsertPassenger()
+    {
+        jdbcUserDao.insertPassenger("赵大宝",42);
+        jdbcUserDao.insertPassenger("宋小宝",37);
+        jdbcUserDao.insertPassenger("牛老根",62);
+    }
 
+    @Test
+    public void testQueryPassengers()
+    {
+        jdbcUserDao.queryPassengers();
+    }
 
 }

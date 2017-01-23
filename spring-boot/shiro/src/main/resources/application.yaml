@@ -2,7 +2,7 @@ server:
   port: 8080
 
 logging:
-  config:classpath: spring-logback.xml
+  config:classpath: logback-spring.xml
 
 # default thymeleaf config is below
 spring:
@@ -24,7 +24,9 @@ spring:
   session:
     store-type: redis
 
-
-
-
-
+# db config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: root
+    password: 123456
