@@ -3,8 +3,8 @@ package net.logvv.shiro.dao;
 import net.logvv.shiro.model.Passenger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by marlon on 2017/1/23.
  */
-@Service
+@Repository
 public class JdbcUserDaoImpl implements JdbcUserDao{
 
       // 单数据源配置

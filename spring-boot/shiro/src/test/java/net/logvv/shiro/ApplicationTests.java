@@ -75,4 +75,11 @@ public class ApplicationTests
         jdbcUserDao.updatePassenger(7,"ÁõÀÏ¸ù",62);
     }
 
+    @Test
+    public void deletePassenger()
+    {
+        jdbcUserDao.deletePassenger(3);
+    }
+
+
 }

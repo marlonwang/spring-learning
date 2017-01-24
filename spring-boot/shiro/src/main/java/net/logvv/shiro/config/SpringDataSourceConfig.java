@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -17,7 +17,7 @@ import javax.sql.DataSource;
  * 多数据源配置
  */
 @Configuration
-@ConfigurationProperties(locations = "classpath:db-config.properties")
+@PropertySource("classpath:db-config.properties")
 public class SpringDataSourceConfig {
 
     // 测试环境数据库
@@ -31,6 +31,7 @@ public class SpringDataSourceConfig {
     // 生产环境数据库
     @Bean(name = "productDataSource")
     @Qualifier("productDataSource")
+    @Primary
     @ConfigurationProperties(prefix = "pro.mysql")
     public DataSource productDataSource(){
         return DataSourceBuilder.create().build();
